@@ -1,0 +1,62 @@
+Front End: Modal Form Completed
+    Validation: HTML and JS validations
+
+Application Logic:
+    Data receiving from user
+        1. Medicine Name
+        2. Medicine type
+        3. Strength (amount + unit)
+        4. Frequency 
+            first, second, third
+        5. Reminder Dates
+
+    Implementation:
+        1. assign variable to all values coming from Form
+        2. initiate mysql error reporting
+        3. Add Medicine 
+        4. get the number of days to set the reminder for, using date_diff(today_date, date_selected_by_user)
+            function in PHP 
+                if difference is +ve number then
+                    For($i; $i<$days; i++){
+                        IF Frequency == 1 then
+                            insert 1 dose on selected dates
+                        ELSE IF Frequency == 2 then
+                            (use freq value for counter variable)
+                            insert doses for 1st freq on selected dates
+                            insert doses for 2nd freq on selected dates
+                        ELSE IF Frequency == 3 then
+                            (use freq value for counter variable)
+                            insert doses for 1st freq on selected dates
+                            insert doses for 2nd freq on selected dates
+                            insert doses for 3rd freq on selected dates
+                        ELSE SHOW ERROR
+                }
+
+                else difference is -ve number then
+                    do not add doses
+                    give feedback to the user 
+
+        date_create() ----> converts string date to object date
+        date_diff() ---->  calculate the difference between two dates
+        diff->format(%R%a) ----> specifies the format to show the result %R -> - or + %a -> diff
+
+        ----> Issue when selecting date when adding new medicine:
+        Error coming in date(), time is set to Europe/Berlin time is 3 hours behind ----> change using: date_default_timezone_set('Asia/karachi');
+
+        ----> Issue: code is redundent, fix issue by 
+            1. making a function of adding new medicine
+            2. make function date difference
+            3. check freq value after adding new medicine and initiating for loop otherwise for loop and addMed() will
+                repeat inside each if-else block 
+Database Logic:
+    data will store in:
+        1. Med type (to be decided in application logic)
+        2. Medicines ----> name, strength, added-on-date, Med type (id) 
+        3. doses ----> user_id, med_id, med_date, med_time, frequency number
+
+    Flow:
+    Step 1: insert into medicine data in medicine table
+    Step 2: get medicine id(last inserted row id function) and save in out parameter
+    Step 3: store the id parameter inside a variable when calling procedure in app logic
+    Step 4: Insert into doses table
+    doses table (By default medicine status stored in db is pending -> id = 3)

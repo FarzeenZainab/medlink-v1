@@ -1,0 +1,38 @@
+PHP and MYSQL: Errors encountered in Programming
+
+
+Registration Page:
+
+   ----> 1. Calling multiple stored procedure without cleaning memory in sql result set
+    Solution  use mysqli_free_result(query_statement_variable) and mysqli_next_result(connection_variable).
+    mysqli_free_result will give an error on Insert and update statement becuase these statement does not return a 
+    result sets, these statements returns boolen (true, false)
+
+
+
+   ----> 2. errors occuring in mysql workbench are not visible when submitting data to MySQL workbench
+    Solution  use mysqli_report(MYSQLI_REPORT_ERROR || MYSQLI_REPORT_STRICT); This will show the Errors
+    occurred when sending or retreiving data from database
+
+   ----> 3. Regular Expression for input validations
+
+Login Page:
+
+   ----> Error in fetching data from database
+    Solution  use 
+
+      "mysqli_fetch_object()" if using OOP or want to user objects syntax. Objects are mainly used to get data and methods of a class but in this case we are just reading data from a row.
+      
+      "mysqli_fetch_array" not recommened  becasue it will use indexed notation to access variables which will result difficulty in accessing data and readability
+      
+      "mysqli_fetch_assoc()" recommended way.
+
+   ----> Convert array data to string
+    Solution  There are two ways 
+    implode();
+    json_encode();
+
+   ----> Not an ERROR -> when echoing print_r() 1 is appended, this is not an error, it is just the status
+    if operation is successfull. It will appended zero next to the array if the process is failed 
+
+

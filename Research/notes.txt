@@ -1,0 +1,80 @@
+Research - Flow and List of requirements before starting project
+
+Web App:
+    You’ll build a web app with a simple UI where a user can sign up for an account. Once logged in, the user is presented with a simple form to add medicine name, dosages, and frequency. After adding those details, the user can view, edit, or delete this information.
+
+The Web Application is based on three components
+    
+    1. Front-End
+        Requirements:
+        > The layout must be consistant and should have a clean design
+        > Must contain icons and images
+        > Home page should have detailed description about the web Application
+        > Dashboard should have the record of the medicine user has taken or missed
+        > Give proper feedback and alerts for better UX
+
+        Pages Required:
+        > Sign up
+        > Login
+        > Dashboard
+        > Medicine record
+            1. Medicine Name: String
+            2. dosages: Quantity (Integer) with units (String) or a freeform text field (String)
+            3. Frequency: Quantity (Integer) with units (String) or freeform text field (String) 
+        > Edit, Update and delete data    
+        > About us
+        > User Profile 
+        > contact us page
+
+
+    2. Back-end Logics
+
+        Research:
+        > authentication
+        > forget password functionality
+        > Correct medical formats to get medical data from user
+        > How to send notification to user
+        > Need to create a cron job that will run on automation and send notification timely to user
+
+
+
+       Development: 
+       > dynamic header (change header if session has started)
+       > Login and Sign up
+       > Send confirmation code and setup forget password
+       > Creating a dynamic Dashboard
+       > Creating CRUD for users to update the Medical data
+       > User Profile CRUD
+
+       > Send Notifications to user
+       > Try sending scheduled emails to remind user
+    
+    3. Database
+       
+       Research:   
+       > Correct date and time formats to use to send timly Notifications
+       > How to store the dosage and frequency and quantity correctly in out Database
+       > Choose the correct data type for each attribute
+       
+    
+       Development: 
+       > Conceptual Model
+       > Logical Model
+       > Physical Model
+       > Normalize database for optimization and scalability
+       > test database
+       > Views
+       > Stored procedures
+       
+Reference App: Medisafe (mobile app on playstore)
+
+       KEYPOINTS:
+        -> Views should be used to store commonly-used JOIN queries and specific columns to build virtual tables of an exact set of data we want to see. Stored procedures hold the more complex logic, such as INSERT, DELETE, and UPDATE statements to automate large SQL workflows.
+
+        -> Store date in YYYY/MM/DD format but convert it when showing to user to DD/MM/YYYY format
+            do it either in a stored procedure or create a function in php application logic
+
+        -> Store time in 24 hours format in mySQL because mySQL does not support 12 hours format. Convert TIME when
+        displaying time to user in 12 hour format, and convert it back to 24 hours format when user sending
+        TIME info to database   
+

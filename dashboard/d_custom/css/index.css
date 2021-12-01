@@ -1,0 +1,105 @@
+.stats {
+  /* background-image: linear-gradient(45deg, #f4f4fa, #ffffff); */
+  padding: 25px 15px 25px 25px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 2px 12px 50px 2px #e4e4f3;
+}
+#wrapper {
+  background-image: linear-gradient(45deg, #f4f4fa, #ffffff) !important;
+}
+
+.stat-heading {
+  font-size: 2.75em !important;
+}
+
+.stat-heading,
+.stats-title,
+.heading {
+  margin-bottom: 0 !important;
+}
+.stats-title {
+  font-size: 14px !important;
+}
+.total {
+  font-size: 0.4em !important;
+  color: rgb(179, 179, 179) !important;
+}
+
+hr {
+  margin-top: 2rem !important;
+  width: 80%;
+}
+table thead th {
+  color: #4b4f53 !important;
+  font-weight: 500 !important;
+  border-top: 1px solid #dee2e6 !important;
+}
+
+table tr td {
+  color: #797e85 !important;
+  padding-bottom: 10px !important;
+  vertical-align: middle !important;
+}
+
+.action-buttons {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  background-color: transparent !important;
+  border: 2px solid rgba(0, 0, 0, 0.1) !important;
+  padding: 3px 20px !important;
+  color: #212529 !important;
+  transition: 0.3s !important;
+  margin: 0 !important;
+}
+
+.action-buttons:hover {
+  color: #ffffff !important;
+  background-color: #212529 !important;
+}
+@media only screen and (min-width: 992px) {
+  .inner {
+    width: 80%;
+    margin: auto;
+  }
+  body {
+    background-image: linear-gradient(45deg, #f4f4fa, #ffffff) !important;
+    height: 100vh !important;
+  }
+}
+
+/* Add Medicine Modal*/
+.steps h4 {
+  margin-bottom: 0 !important;
+}
+
+form {
+  margin-bottom: 0 !important;
+}
+
+.med-name {
+  color: #023e8a !important;
+  display: inline-block !important;
+  margin-bottom: 0 !important;
+}
+
+/* Take Medicine and Skip Medicine*/
+.med-taken,
+.skipped {
+  background-color: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.med-taken:hover,
+.skipped:hover {
+  background-color: transparent !important;
+  border: none !important;
+  cursor: default !important;
+}
+
+@media only screen and (min-width: 992px) {
+  .h-100 {
+    height: 100vh !important;
+  }
+}

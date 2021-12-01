@@ -1,0 +1,34 @@
+-- The medical history page should list all the doses 
+    1. taken, 
+    2. skipped 
+    3. deleted
+    4. edited 
+by a user
+
+-- The user should not be able to delete any record in the medical history table
+-- The DB admin can have access to delete all the records
+
+In database:
+    1. create new table that will store the data when ever any change occured in the doses table
+    2. write sql script, use triggers
+    3. verify if the script is working
+
+    ----> bug: 
+            when using case statement in the trigger logic:
+            case 
+                when status_id = 1 then 'Dose taken'
+                when status_id = 2 then 'Dose skipped'
+                when status_id = 3 then 'Dose updated'
+            end
+
+            here the issue is when user edits the dose which is already marked
+            as taken/skipped the action showed in the table is coming dose updated
+            whereas, it should be taken + updated 
+
+
+
+Front End:
+    1. display all the records on front End
+
+Back End
+    1. Fetch all the records from user_medical_history table

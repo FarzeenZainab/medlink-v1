@@ -1,0 +1,47 @@
+.shadow {
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+.parsley-errors-list {
+  margin-bottom: 0 !important;
+  list-style-type: none !important;
+  font-size: 14px !important;
+  color: #b10525 !important;
+}
+
+.form-group {
+  margin-bottom: 0 !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .form-input-div {
+    display: flex !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .col-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .p-5 {
+    padding: 1rem !important;
+  }
+  .breaks {
+    display: none;
+  }
+  .register,
+  .h-register {
+    text-align: center !important;
+  }
+  .register input {
+    width: 100% !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+  }
+  .form-group {
+    padding: 0 !important;
+  }
+}

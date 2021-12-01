@@ -1,0 +1,53 @@
+Validation Rules:
+    firstname --> required + no white spaces + no special charaters + max length 50 
+    lastname --> required + no white spaces + no special charaters + max length 50
+    email --> required + must be contain @ and . + max length 150 
+    phone --> required + max 15-20 digits long (international number system)
+    password  --> required + max 100
+    confirm-password --> required + max 100 + should be same as password
+    age --> max 100 min 12 + required
+    date of birth --> (max current year - 2) + min 1940 + required  
+    gender --> required
+
+    Remove all white space from left and right
+
+
+
+ TODO   Important  Client Side Validation
+
+
+ TODO   Important  Server Side Validation
+
+----> Server side validations are also required because a user can deactivate JS validation file and can send
+malicious code to database. To secure the db from attacks we need to add another layer of security
+
+server should check other requirements before submitting data into database
+
+
+----> action for a form whose data will be processed in the same file will be 
+        action = "<?php $_SERVER[PHP_SELF]?>"
+
+        $_SESSION['PHP_SELF'] is vulnerable because it can be used by hackers
+        to run harmfull scripts in the URL (Cross-server scripting attacks)
+
+        To avoid these attack htmlspecialchars() is used to convert all special characters like < > " ' & to 
+        html entities.
+
+        & (ampersand) becomes &amp;
+        " (double quote) becomes &quot;
+        ' (single quote) becomes &#039;
+        < (less than) becomes &lt;
+        > (greater than) becomes &gt;
+
+        
+
+        to decode these entities back  to html characters we can use htmlspecialchar decode()
+
+----> Sanitizing Data of a form
+
+
+----> Using PHP library for data filters
+
+
+----> https://www.freecodecamp.org/news/form-validation-with-html5-and-javascript/
+        https://www.php.net/manual/de/mysqli.real-escape-string.php

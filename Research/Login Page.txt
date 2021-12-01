@@ -1,0 +1,5 @@
+Research PHP function password_verify()
+
+----> Password_verify();
+    
+    

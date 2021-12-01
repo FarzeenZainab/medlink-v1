@@ -1,0 +1,25 @@
+.form-hidden {
+  display: none !important;
+}
+
+.form-active {
+  display: block;
+}
+.freq,
+.days-label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.form-group .form-label {
+  margin: 0 !important;
+  margin-right: 15px !important;
+}
+.display-none {
+  display: none !important;
+}
+
+.error-add-new-med {
+  font-size: 14px !important;
+  color: #b10525 !important;
+}

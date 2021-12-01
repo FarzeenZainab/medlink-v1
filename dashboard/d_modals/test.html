@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../d_custom/css/add_med.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="../js/components/datatables.min.css"/>
+    <?php require('structure/d_header-links.php') ?>
+    <title>Document</title>
+</head>
+<body>
+<!-- Add Medicines -->
+    <div class="modal fade" id="add-med" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="modal">
+            <div class="modal-content px-3 pt-3 mb-0">
+                <button type="button" class="close text-right" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+
+                <div classs="modal-header">
+                    <h3 class="modal-title font-display text-center">Add New Medicine</h3>
+                </div>
+                <div class="modal-body p-0 mt-4">
+                    <div class="errors">
+                        <span class="text-danger display-none invalid-date">Please select a valid date</span>
+                        <span class="display-none error-add-new-med">Something went wrong, please try later!</span>
+                    </div>
+                   
+                    <div id="step-1" class="form-active">
+                        <div class="form-group">
+                            <label class="form-label" for="med-name-input">Medicine Name</label>
+                            <input type="text" class="form-control" name="med-name" id="med-name-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="med-type-list">Medicine Type</label>
+                            <div class="input-group" id="med-type-list">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="med-type-dropdown">Options</label>
+                                </div>
+                                <select name="med-type" id="med-type-dropdown" class="custom-select">
+                                    <option value="1">pill</option>
+                                    <option value="2">capsule</option>
+                                    <option value="3">liquid</option>
+                                    <option value="4">drops</option>
+                                    <option value="5">inhaler</option>
+                                    <option value="6">injection</option>
+                                    <option value="7">tablet</option>
+                                </select>
+                            </div>
+                        </div>
+                                
+                        <div class="form-group">
+                            <label class="form-label" for="strength">Strength</label>
+                            <h6 class=" m-0 p-0">Ex: 10mg<h6>
+                            <div class="d-flex">
+                                <input type="number" name="quantity" id="strength" min="1" max="99999" class="form-control">
+                                <select name="unit" id="unit-dropdown" class="custom-select">
+                                    <option>Choose Unit</option>
+                                    <option value="mg" selected>mg</option>
+                                    <option value="ml">ml</option>
+                                    <option value="g">g</option>
+                                    <option value="mcg or μg">mcg or μg</option>
+                                </select>
+                            </div>
+                        </div>
+                                
+                                
+                        <div class="daily-frequency">
+                            <h5>How Often Do you Take This Medicine Daily</h5>
+                            <div class="form-check">
+                                <input type="radio" id="once-daily" class="form-check-input" value="1" name="med-frequency-daily">
+                                <label class="form-check-label" for="once-daily">Once daily</label>
+                            </div>
+                                
+                            <div class="form-check">
+                                <input type="radio" id="twice-daily" class="form-check-input" value="2" name="med-frequency-daily">
+                                <label  class="form-check-label" for="twice-daily">Twice daily</label>
+                            </div>
+                                
+                            <div class="form-check">
+                                <input type="radio" id="thrice-daily" class="form-check-input" value="3" name="med-frequency-daily">
+                                <label  class="form-check-label" for="thrice-daily">Thrice daily</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-4 text-center">
+                            <a href="#" class="btn-next-daily text-right button rounded font-weight-medium">Continue</a>
+                            <button class="button rounded bg-color-2 button-light ls0 font-weight-medium" type="button" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+
+                    <div class="time-freq-div form-hidden form-group">
+                        <div class="time-daily-frequency"></div>
+                        <div class="no-of-days-to-reminder">
+                            <div class="form-group">
+                                <label for="reminder-dates">Set A Remind till</label>
+                                <input type="date" name="reminder-dates" id="reminder-dates" class="form-control" min="<?php echo date('Y-m-d') ?>" max="<?php echo date('Y-m-d', strtotime('+20 days'))  ?>">
+                            </div>
+                        </div>
+
+                        <div class="dose-quantity">
+                            <div class="form-group">
+                                <label for="dose-quantity">Dose quantity you take at each frequency</label>
+                                <br>
+                                <small>Ex: 1 Dose</small>
+                                <input type="number" min="1" max="10000" name="dose-quantity" id="dose-quantity" class="form-control">
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+
+                <div class="form-hidden add-med-footer">
+                    <div class="modal-footer px-0">
+                        <div class="buttons-footer d-flex justify-content-between my-3 mx-0 w-100">
+                        <div class="btn-div-time text-center">
+                            <a href="#" class="btn btn-back-time button rounded bg-color-2 button-light ls0 font-weight-medium m-0">Back</a>
+                            <button class="button rounded bg-color-2 button-light ls0 font-weight-medium m-0" type="button" data-dismiss="modal">Cancel</button>
+                        </div>
+
+                        <button class="button rounded ls0 font-weight-medium m-0 d-sm-flex" name="add-new-med" value="Add Medicine" id="add-medicines">Add medicine</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="../d_js/add_med.js"></script>
+
+    
+</body>
+</html>
